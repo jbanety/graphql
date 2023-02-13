@@ -1,5 +1,37 @@
 # @neo4j/graphql
 
+## 4.0.0-beta.0
+
+### Major Changes
+
+-   [#2863](https://github.com/neo4j/graphql/pull/2863) [`c9ee9e757`](https://github.com/neo4j/graphql/commit/c9ee9e757427f512950ec58aad7e30923b297a05) Thanks [@darrellwarde](https://github.com/darrellwarde)! - Support for Neo4j database 4.3 has been dropped. Please use the current Neo4j 5 release, or the LTS 4.4 release.
+
+-   [#2834](https://github.com/neo4j/graphql/pull/2834) [`8d3aff007`](https://github.com/neo4j/graphql/commit/8d3aff007c0d5428313cef23602e9a4ef5ef3792) Thanks [@a-alle](https://github.com/a-alle)! - Deprecated @node directive arguments `label` and `additionalLabels` have been removed. Please use the `labels` argument.
+
+-   [#2818](https://github.com/neo4j/graphql/pull/2818) [`93b9d806b`](https://github.com/neo4j/graphql/commit/93b9d806b12c79dae7491b901378acf9d43f1c06) Thanks [@a-alle](https://github.com/a-alle)! - Removed deprecated argument `plural` from `@node` directive. Please use the `@plural` directive instead.
+
+-   [#2769](https://github.com/neo4j/graphql/pull/2769) [`e5b53a597`](https://github.com/neo4j/graphql/commit/e5b53a5976a2880e0efdecddcddcfb427015c823) Thanks [@angrykoala](https://github.com/angrykoala)! - `@cypher` directive now requires the parameter `columnName`.
+
+    This requires all cypher queries to be made with a valid alias that must be referred in this new parameter.
+
+    For Example:
+
+    **@neo4j/graphql@3**
+
+    ```
+    @cypher(statement: "MATCH (i:Item) WHERE i.public=true RETURN i.name")
+    ```
+
+    **@neo4j/graphql@4**
+
+    ```
+    @cypher(statement: "MATCH (i:Item) WHERE i.public=true RETURN i.name as result", columnName: "result")
+    ```
+
+-   [#2819](https://github.com/neo4j/graphql/pull/2819) [`2ab3d5212`](https://github.com/neo4j/graphql/commit/2ab3d521277d66afd7acaea00aa56d44f10480bd) Thanks [@a-alle](https://github.com/a-alle)! - Removed `@computed` directive. Please use `@customResolver` instead.
+
+-   [#2598](https://github.com/neo4j/graphql/pull/2598) [`257aa4c97`](https://github.com/neo4j/graphql/commit/257aa4c97a0d367063725dff703fdd30f0f8ecb5) Thanks [@darrellwarde](https://github.com/darrellwarde)! - Remove all arguments from IExecutableSchemaDefinition apart from `typeDefs` and `resolvers`. This is to simplify the API and to remove any unexpected behaviours from arguments which we blindly pass through.
+
 ## 3.16.0
 
 ### Minor Changes
