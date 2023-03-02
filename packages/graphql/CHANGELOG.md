@@ -1,5 +1,11 @@
 # @neo4j/graphql
 
+## 3.17.1
+
+### Patch Changes
+
+-   [#2942](https://github.com/neo4j/graphql/pull/2942) [`8e41a724a`](https://github.com/neo4j/graphql/commit/8e41a724a3abae1fa63fb5cd4cc1cf7a08e124d1) Thanks [@darrellwarde](https://github.com/darrellwarde)! - Fix `@coalesce` and `@default` for Enum List values
+
 ## 3.17.0
 
 ### Minor Changes
